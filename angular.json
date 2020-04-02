@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "whitelist-tube"
+    }
+  },
+  "defaultProject": "whitelist-tube",
+  "cli": {
+    "analytics": false
+  }
 }
