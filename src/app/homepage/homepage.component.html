@@ -1,1 +1,10 @@
-<p>homepage works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-l">
+      <wlt-player [videoId]="pl.selectedVideoId"></wlt-player>
+    </div>
+    <div class="col-sm">
+      <wlt-playlist #pl [playlist]="playlist" (videoSelected)="selectVideo($event)"></wlt-playlist>
+    </div>
+  </div>
+</div>

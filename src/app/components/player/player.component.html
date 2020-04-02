@@ -1,0 +1,9 @@
+<div class='d-block'>
+  <div #playerwrapper class='overlay'>
+    <youtube-player id='player' #youtube [videoId]="videoId"></youtube-player>
+  </div>
+</div>
+<DIV class='d-block'>
+  <fa-icon class='player-button' [icon]="faPlay" (click)='play()' size='4x'></fa-icon>
+  <fa-icon class='player-button float-right' [icon]="faFullScreen" (click)='fullScreen()' size='4x'></fa-icon>
+</DIV>
