@@ -25,23 +25,23 @@ const vids = [
 
     return new Playlist('12','Кадрики', [
 
-      {id:'WX8HmogNyCY', name:''},
+      // {id:'WX8HmogNyCY', name:''},
 
-      {id:'G50zZpzQwjs', name:''},
+      // {id:'G50zZpzQwjs', name:''},
 
-      {id:'JcRZHejCogg', name:''},
+      // {id:'JcRZHejCogg', name:''},
 
-      {id:'uF5mvB1f11E', name:''},
+      // {id:'uF5mvB1f11E', name:''},
 
       {id:'qcA3MTrlQL0', name:''},
 
-      {id:'0a7dfpihN6s', name:''},
+      // {id:'0a7dfpihN6s', name:''},
 
     //  {id:'yAhEL4MYejA', name:''},
 
-      {id:'sVdOuqwjqgQ', name:''},
+      // {id:'sVdOuqwjqgQ', name:''},
 
-      {id:'l4WNrvVjiTw', name:''},
+      // {id:'l4WNrvVjiTw', name:''},
     ]);
   }
 

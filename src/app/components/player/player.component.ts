@@ -10,12 +10,12 @@ import { faPlay, faPause, faExpand, faStepForward, faStepBackward } from '@forta
 export class PlayerComponent implements OnInit, AfterViewInit {
 
   @ViewChild('youtube') youtube: YouTubePlayer;
+
   @Input() public videoId: string;
   @Input() public autoplay: boolean;
   @Input() public width: number = 1280;
   @Input() public height: number = 720;
   @Output() videoEnded = new EventEmitter();
-
 
 
   get videoIsPlaying(): boolean { return YT.PlayerState.PLAYING == this.youtube.getPlayerState() }
@@ -40,6 +40,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
       '5': 'CUED',
       '100': 'Undefined'
     }
+
     setInterval(() => {
       if (!this.youtube) {
         return;

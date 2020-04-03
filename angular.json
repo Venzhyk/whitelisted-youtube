@@ -42,6 +42,8 @@
             "outputPath": "dist/whitelist-tube",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "deployUrl": "/youtube/",
+            "baseHref": "",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,

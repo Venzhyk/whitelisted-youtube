@@ -41,9 +41,11 @@ export class HomepageComponent implements OnInit {
   next() {
     this.pl.next();
   }
+
   play() {
     this.player.play();
   }
+
   fullScreen() {
     this.player.fullScreen();
   }
