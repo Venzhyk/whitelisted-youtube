@@ -14,7 +14,10 @@ export class PlaylistComponent implements OnInit {
   public get title(): string { return this.playlist?.title; };
   public get videos(): Video[] { return this.playlist?.videos; };
 
-  public selectedVideoId: string;
+  public _selectedVideoId: string;
+  public get selectedVideoId(): string { return this._selectedVideoId; };
+
+  public set selectedVideoId(videoId: string) { this._selectedVideoId = videoId; this.videoSelected.emit(this._selectedVideoId); };
 
   _playlist: Playlist;
   @Input() public set playlist(p: Playlist) {
@@ -26,7 +29,7 @@ export class PlaylistComponent implements OnInit {
     return this._playlist;
   };
 
-  @Output() public videoSelected: EventEmitter<Video> = new EventEmitter<Video>();
+  @Output() public videoSelected: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
     this.playlist = new Playlist('', 'None', [])
@@ -36,8 +39,37 @@ export class PlaylistComponent implements OnInit {
 
   }
 
+
+  public prev() {
+    let videos = [...this.videos].reverse();
+    this.nextInternal(videos);
+  }
+
+  public next() {
+    this.nextInternal(this.videos);
+  }
+
+  private nextInternal(videos: Video[]) {
+    let itIsNextVideo = false;
+    let nextIsSelected = false;
+
+    for (let v of videos) {
+      if (itIsNextVideo) {
+        this.selectedVideoId = v.id;
+        nextIsSelected = true;
+        break;
+      }
+      if (v.id == this.selectedVideoId) {
+        itIsNextVideo = true;
+      }
+    }
+
+    if (!nextIsSelected && this.videos.length > 0) {
+      this.selectedVideoId = this.videos[0].id;
+    }
+  }
+
   public selectVideo(video: Video) {
-    this.videoSelected.emit(video);
     this.selectedVideoId = video.id;
   }
 }

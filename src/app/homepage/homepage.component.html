@@ -1,7 +1,13 @@
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf='playlist'>
     <div class="col-l">
-      <wlt-player [videoId]="pl.selectedVideoId"></wlt-player>
+      <wlt-player #player [autoplay]='true' (videoEnded)='next()'></wlt-player>
+      <DIV class='d-block'>
+        <fa-icon class='player-button' [icon]="faStepBackward" (click)='prev()' size='4x'></fa-icon>
+        <fa-icon class='player-button' [icon]="faPlay" (click)='play()' size='4x'></fa-icon>
+        <fa-icon class='player-button' [icon]="faStepForward" (click)='next()' size='4x'></fa-icon>
+        <fa-icon class='player-button float-right' [icon]="faFullScreen" (click)='fullScreen()' size='4x'></fa-icon>
+      </DIV>
     </div>
     <div class="col-sm">
       <wlt-playlist #pl [playlist]="playlist" (videoSelected)="selectVideo($event)"></wlt-playlist>
