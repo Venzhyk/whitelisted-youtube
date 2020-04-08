@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "whitelist-yout23c34r": {
+      "hosting": {
+        "whitelist-tube": [
+          "whitelist-yout23c34r"
+        ]
+      }
+    }
+  }
+}

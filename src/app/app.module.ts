@@ -11,14 +11,26 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PlayerComponent } from './components/player/player.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {fas}  from '@fortawesome/free-solid-svg-icons';
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { environment } from '../environments/environment';
+import { LoginComponent } from './pages/login/login.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { MusicComponent } from './pages/music/music.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     PlayerComponent,
     PlaylistComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    LandingComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,
@@ -26,11 +38,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     NgbModule,
     YouTubePlayerModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
   ],
   providers: [
 
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    library.add(fas);
+  }
+}

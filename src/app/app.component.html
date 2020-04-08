@@ -1,4 +1,7 @@
 <!-- <h1>White listed Youtube</h1> -->
-
-
-<router-outlet></router-outlet>
+<wlt-navbar></wlt-navbar>
+<fa-icon [icon]='faCircle'></fa-icon>
+<span>{{ displayName }} <fa-icon icon='expand'></fa-icon> </span>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
